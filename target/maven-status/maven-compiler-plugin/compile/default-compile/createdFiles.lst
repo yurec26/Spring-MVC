@@ -1,3 +1,4 @@
+org\example\config\JavaConfig.class
 org\example\exception\NotFoundException.class
 org\example\servlet\MainServlet.class
 org\example\controller\PostController.class
