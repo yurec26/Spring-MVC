@@ -2,6 +2,7 @@ HELP.md
 .gradle
 build/
 
+
 ### STS ###
 .apt_generated
 .classpath
@@ -17,6 +18,7 @@ build/
 *.iml
 *.ipr
 out/
+target/
 
 ### Android Studio ###
 local.properties

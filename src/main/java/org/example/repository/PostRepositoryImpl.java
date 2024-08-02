@@ -2,9 +2,10 @@ package org.example.repository;
 
 
 import org.example.model.Post;
+import org.springframework.stereotype.Repository;
 
 import java.util.*;
-
+@Repository
 public class PostRepositoryImpl implements PostRepository {
     public static long postCounter = 0;
     private List<Post> posts = Collections.synchronizedList(new ArrayList<>());
