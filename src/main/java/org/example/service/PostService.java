@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+
 @Service
 public class PostService {
     private final PostRepository repository;
@@ -21,20 +22,29 @@ public class PostService {
     }
 
     public Post getById(long id) {
-        Optional<Post> post = repository.getById(id);
-        if (post.isPresent()) {
-            return post.get();
+        Optional<Post> postOption = repository.getById(id);
+        if (postOption.isPresent()) {
+            return postOption.get();
         } else {
             throw new NotFoundException();
         }
     }
 
     public Post save(Post post) {
-        return repository.save(post);
+        Optional<Post> postOption = repository.save(post);
+        if (postOption.isPresent()) {
+            return postOption.get();
+        } else {
+            throw new NotFoundException();
+        }
     }
 
     public void removeById(long id) {
         repository.removeById(id);
+    }
+
+    public List<Post> show() {
+        return repository.show();
     }
 }
 
