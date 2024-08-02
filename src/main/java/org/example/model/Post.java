@@ -1,15 +1,28 @@
 package org.example.model;
 
 
-public class Post {
-    private long id;
-    private String content;
+import com.google.gson.annotations.Expose;
 
+public class Post {
+    @Expose
+    private long id;
+    @Expose
+    private String content;
+    private boolean removed = false;
 
     public Post(long id, String content) {
         this.id = id;
         this.content = content;
     }
+
+    public boolean isRemoved() {
+        return removed;
+    }
+
+    public void setRemoved(boolean removed) {
+        this.removed = removed;
+    }
+
 
     public long getId() {
         return id;

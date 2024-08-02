@@ -22,6 +22,11 @@ public class PostController {
         return service.all();
     }
 
+    @GetMapping("/show")
+    public List<Post> show() {
+        return service.show();
+    }
+
     @GetMapping("/{id}")
     public Post getById(@PathVariable long id) {
         return service.getById(id);
